@@ -1,0 +1,292 @@
+/* === VARIABLES === */
+:root {
+    --bg-color: #f9fafb;
+    --text-color: #1e293b;
+    --accent-color: #4f46e5;
+    --accent-hover: #4338ca;
+    --card-bg: #ffffff;
+    --nav-bg: #e0e7ff;
+    --nav-text: #1e293b;
+    --nav-hover: #c7d2fe;
+    --focus-ring: 0 0 0 3px rgba(79, 70, 229, 0.5);
+    --transition-speed: 0.3s;
+  }
+  
+  body.dark-mode {
+    --bg-color: #111827;
+    --text-color: #e2e8f0;
+    --card-bg: #1f2937;
+    --nav-bg: #1f2937;
+    --nav-text: #e2e8f0;
+    --nav-hover: #334155;
+    --focus-ring: 0 0 0 3px rgba(165, 180, 252, 0.5);
+  }
+  
+  /* === RESET & BASICS === */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    line-height: 1.6;
+  }
+  
+  /* === HEADER & NAVIGATION === */
+  header {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--nav-bg);
+    z-index: 1000;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 16px 16px;
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--nav-text);
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+  
+  .hamburger:hover {
+    background-color: var(--nav-hover);
+  }
+  
+  #navLinks {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  
+  #navLinks li a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    transition: all var(--transition-speed);
+    position: relative;
+  }
+  
+  #navLinks li a:hover {
+    background-color: var(--nav-hover);
+    transform: translateY(-2px);
+  }
+  
+  #navLinks li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: all var(--transition-speed);
+  }
+  
+  #navLinks li a:hover::after {
+    width: 50%;
+    left: 25%;
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    #navLinks {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: var(--nav-bg);
+      padding: 1rem;
+    }
+  
+    #navLinks.active {
+      display: flex;
+    }
+  }
+  
+  /* === MAIN CONTENT === */
+  main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  section {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  }
+  
+  section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    font-size: 1.75rem;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: border-color var(--transition-speed);
+    font-size: 1rem;
+  }
+  
+  input:focus, textarea:focus, select:focus, button:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+  
+  button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+  }
+  
+  button:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+  }
+  
+  #sliderImage {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  
+  .word-counter textarea {
+    height: 150px;
+  }
+  
+  /* === FOOTER === */
+  footer {
+    background-color: var(--accent-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  /* === DARK MODE === */
+  body.dark-mode section {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+  }
+  
+  body.dark-mode input,
+  body.dark-mode textarea,
+  body.dark-mode select {
+    background-color: #374151;
+    color: #f3f4f6;
+    border: 1px solid #555;
+  }
+  
+  body.dark-mode button {
+    background-color: #2563eb;
+  }
+  
+  /* === CLOCK STYLING === */
+  #clock-container {
+    text-align: center;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-speed);
+  }
+  
+  #time {
+    font-size: 2.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  #date {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+  }
+  
+  #day {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .clock-seconds {
+    animation: pulse 1s ease-in-out infinite;
+    color: var(--accent-color);
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  /* === MEDIA QUERIES === */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .slider {
+      flex-direction: column;
+    }
+  }
+  

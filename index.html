@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive web project with multiple features">
+  <title>Web Project</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon"
+    href="data:image/svg+xml, <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22> <text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+</head>
+
+<body>
+  <header>
+    <h1>Web Project</h1>
+    <nav>
+      <div class="hamburger" id="hamburger">
+        &#9776; <!-- Hamburger icon -->
+      </div>
+      <ul id="navLinks">
+        <li><a href="#click-counter">Click Counter</a></li>
+        <li><a href="#color-changer">Color Changer</a></li>
+        <li><a href="#form-validation">Form Validation</a></li>
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#clock">Clock</a></li>
+        <li><a href="#dark-mode">Dark Mode</a></li>
+        <li><a href="#quote-generator">Quotes</a></li>
+        <li><a href="#image-slider">Slider</a></li>
+        <li><a href="#bmi-calculator">BMI</a></li>
+        <li><a href="#word-counter">Word Counter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="click-counter">
+      <h2>Click Counter</h2>
+      <button id="clickBtn">Click Me</button>
+      <p>Count: <span id="countDisplay">0</span></p>
+    </section>
+
+    <section id="color-changer">
+      <h2>Color Changer</h2>
+      <button id="colorBtn">Change Background Color</button>
+    </section>
+
+    <section id="form-validation">
+      <h2>Form Validation</h2>
+      <input type="text" id="name" placeholder="Name">
+      <input type="email" id="email" placeholder="Email">
+      <button id="submitBtn">Submit</button>
+      <p id="formError"></p>
+    </section>
+
+    <section id="calculator">
+      <h2>Basic Calculator</h2>
+      <input type="number" id="num1" placeholder="Number 1">
+      <input type="number" id="num2" placeholder="Number 2">
+      <button id="calcBtn">Calculate</button>
+      <pre id="calcResult"></pre>
+    </section>
+
+    <section id="clock">
+      <h2>Digital Clock</h2>
+      <div id="clock-container">
+        <div id="time"></div>
+        <div id="date"></div>
+        <div id="day"></div>
+      </div>
+    </section>
+
+    <section id="dark-mode">
+      <h2>Toggle Light/Dark Mode</h2>
+      <button id="toggleModeBtn">Toggle Mode</button>
+    </section>
+
+    <section id="quote-generator">
+      <h2>Random Quote Generator</h2>
+      <button id="quoteBtn">New Quote</button>
+      <p id="quoteDisplay"></p>
+    </section>
+
+    <section id="image-slider">
+      <h2>Image Slider</h2>
+      
+      <img id="sliderImage" src="Screenshot 2025-04-13 151200.png" alt="Slider">
+      <button id="prevBtn">Previous</button>
+      <button id="nextBtn">Next</button>
+    </section>
+
+    <section id="bmi-calculator">
+      <h2>BMI Calculator</h2>
+      <input type="number" id="weight" placeholder="Weight (kg)">
+      <input type="number" id="height" placeholder="Height (cm)">
+      <button id="bmiBtn">Calculate BMI</button>
+      <p id="bmiResult"></p>
+    </section>
+
+    <section id="word-counter">
+      <h2>Word Counter</h2>
+      <textarea id="textInput" rows="4" cols="50" placeholder="Type your text here..."></textarea>
+      <p id="wordCount">Word Count: 0</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Web Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
